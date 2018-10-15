@@ -6,6 +6,39 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    function showPassword() {
+    var x = document.getElementById("password");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+} 
+  function validateForm(){
+			var phno=document.signup.p_n.value;
+			if(isNaN(phno)){
+				x=document.getElementId("phno_msg");
+				x.innerHtml="Invalid phone number !";
+				return false;
+			}
+			return true;
+		} 
+    $(document).ready(function(){
+    var a,b;
+    $("#P").click(function(){
+        a=$("#PHOTO").detach();
+        b=$("#SIGN").detach();
+        
+    });
+    $("#D").click(function(){
+       
+        $("#PHOTOGRAPH").after(a);
+        $("#SIGNATURE").after(b);
+    });
+});
+    </script>
 </head>
 <body>
 <div class="header">
@@ -23,18 +56,296 @@
     <a class="active" href="signup.html"><i class="fa fa-fw fa-user"></i>Sign Up</a>
   </div>
 </div>
-<form action="" method="POST" autocomplete="on" onsubmit="return validateForm()">
-<div class="container">
-<h1> Sign up </h1>
- <hr>
- <label for="name"><b>Name</b></label> 
-  <input id="f_n" name="FIRSTNAME"  type="text" placeholder="Enter your first name !" required  />
-  <input id="m_n" name="MIDDLENAME"  type="text" placeholder="Enter your middle name !" />
-  <input id="l_n" name="LASTNAME"  type="text" placeholder="Enter your last name !"  required /> 
-  
-</div>
+<form action="" method="POST" autocomplete="on" onsubmit="return validateForm()" ACCEPT="IMAGE/JPG,IMAGE/JPEG,IMAGE/PNG" ENCTYPE="mutlipart/form-data">
+<DIV ALIGN="CENTER">
+<H1>Sign Up</H1>
+<TABLE >
+<TR>
+<TD><B>Category</B></TD>
+<TD> <INPUT TYPE="RADIO" NAME="PROF" VALUE="D" ID="D">Doctor</TD>
+<TD> <INPUT TYPE="RADIO" NAME="PROF" VALUE="P" ID="P">Patient</TD>
+</TR>
+<TR>
+<TD><B>First Name </B></TD>
+<TD><INPUT TYPE="TEXT" NAME="FIRSTNAME" PLACEHOLDER="Enter your first name !" SIZE="25" MAXLENGTH="30" REQUIRED AUTOFOCUS></TD>
+<TD><B> Middle Name </B></TD>
+<TD><INPUT TYPE="TEXT" NAME="MIDDLENAME" PLACEHOLDER="Enter your middle name !" SIZE="25" MAXLENGth="30"></TD>
+<TD><B> Last Name </B></TD>
+<TD><INPUT TYPE="TEXT" NAME="LASTNAME" PLACEHOLDER="Enter your last name !" SIZE="25" MAXLENGTH="30" REQUIRED></TD>
+</TR>
+<TR>
+<TD><B>DOB </B></TD>
+<TD><INPUT TYPE="TEXT" NAME="DOB" PLACEHOLDER="dd/mm/yyyy" SIZE="10"></TD>
+<TD><B> Country </B></TD>
+<TD><SELECT NAME="COUNTRY" SIZE="1" >
+    <OPTION>Afghanistan</OPTION>
+    <OPTION>Albania</OPTION>
+    <OPTION>Algeria</OPTION>
+    <OPTION>Andorra</OPTION>
+    <OPTION>Angola</OPTION>
+    <OPTION>Antigua and Barbuda</OPTION>
+    <OPTION>Argentina</OPTION>
+    <OPTION>Armenia</OPTION>
+    <OPTION>Aruba</OPTION>
+    <OPTION>Australia</OPTION>
+    <OPTION>Austria</OPTION>
+    <OPTION>Azerbaijan</OPTION>
+    <OPTION>Bahamas, The</OPTION>
+    <OPTION>Bahrain</OPTION>
+    <OPTION>Bangladesh</OPTION>
+    <OPTION>Barbados</OPTION>
+    <OPTION>Belarus</OPTION>
+    <OPTION>Belgium</OPTION>
+    <OPTION>Belize</OPTION>
+    <OPTION>Benin</OPTION>
+    <OPTION>Bhutan</OPTION>
+    <OPTION>Bolivia</OPTION>
+    <OPTION>Bosnia and Herzegovina</OPTION>
+    <OPTION>Botswana</OPTION>
+    <OPTION>Brazil</OPTION>
+    <OPTION>Brunei</OPTION>
+    <OPTION>Bulgaria</OPTION>
+    <OPTION>Burkina Faso</OPTION>
+    <OPTION>Burma</OPTION>
+    <OPTION>Burundi</OPTION>
+    <OPTION>Cambodia</OPTION>
+    <OPTION>Cameroon</OPTION>
+    <OPTION>Canada</OPTION>
+    <OPTION>Cabo Verde</OPTION>
+    <OPTION>Central African Republic</OPTION>
+    <OPTION>Chad</OPTION>
+    <OPTION>Chile</OPTION>
+    <OPTION>China</OPTION>
+    <OPTION>Colombia</OPTION>
+    <OPTION>Comoros</OPTION>
+    <OPTION>Congo, Democratic Republic of the</OPTION>
+    <OPTION>Congo, Republic of the</OPTION>
+    <OPTION>Costa Rica</OPTION>
+    <OPTION>Cote d'Ivoire</OPTION>
+    <OPTION>Croatia</OPTION>
+    <OPTION>Cuba</OPTION>
+    <OPTION>Curacao</OPTION>
+    <OPTION>Cyprus</OPTION>
+    <OPTION>Czechia</OPTION>
+    <OPTION>Denmark</OPTION>
+    <OPTION>Djibouti</OPTION>
+    <OPTION>Dominica</OPTION>
+    <OPTION>Dominican Republic</OPTION>
+    <OPTION>East Timor (see Timor-Leste)</OPTION>
+    <OPTION>Ecuador</OPTION>
+    <OPTION>Egypt</OPTION>
+    <OPTION>El Salvador</OPTION>
+    <OPTION>Equatorial Guine</OPTION>a
+    <OPTION>Eritrea</OPTION>
+    <OPTION>Estonia</OPTION>
+    <OPTION>Ethiopia</OPTION>
+    <OPTION>Fiji</OPTION>
+    <OPTION>Finland</OPTION>
+    <OPTION>France</OPTION>
+    <OPTION>Gabon</OPTION>
+    <OPTION>Gambia, The</OPTION>
+    <OPTION>Georgia</OPTION>
+    <OPTION>Germany</OPTION>
+    <OPTION>Ghana</OPTION>
+    <OPTION>Greece</OPTION>
+    <OPTION>Grenada</OPTION>
+    <OPTION>Guatemala</OPTION>
+    <OPTION>Guinea</OPTION>
+    <OPTION>Guinea-Bissau</OPTION>
+    <OPTION>Guyana</OPTION>
+    <OPTION>Haiti</OPTION>
+    <OPTION>Holy See</OPTION>
+    <OPTION>Honduras</OPTION>
+    <OPTION>Hong Kong</OPTION>
+    <OPTION>Hungary</OPTION>
+    <OPTION>Iceland</OPTION>
+    <OPTION SELECTED="TRUE">India</OPTION>
+    <OPTION>Indonesia</OPTION>
+    <OPTION>Iran</OPTION>
+    <OPTION>Iraq</OPTION>
+    <OPTION>Ireland</OPTION>
+    <OPTION>Israel</OPTION>
+    <OPTION>Italy</OPTION>
+    <OPTION>Jamaica</OPTION>
+    <OPTION>Japan</OPTION>
+    <OPTION>Jordan</OPTION>
+    <OPTION>Kazakhstan</OPTION>
+    <OPTION>Kenya</OPTION>
+    <OPTION>Kiribati</OPTION>
+    <OPTION>Korea, North</OPTION>
+    <OPTION>Korea, South</OPTION>
+    <OPTION>Kosovo</OPTION>
+    <OPTION>Kuwait</OPTION>
+    <OPTION>Kyrgyzstan</OPTION>
+    <OPTION>Laos</OPTION>
+    <OPTION>Latvia</OPTION>
+    <OPTION>Lebanon</OPTION>
+    <OPTION>Lesotho</OPTION>
+    <OPTION>Liberia</OPTION>
+    <OPTION>Libya</OPTION>
+    <OPTION>Liechtenstein</OPTION>
+    <OPTION>Lithuania</OPTION>
+    <OPTION>Luxembourg</OPTION>
+    <OPTION>Macau</OPTION>
+    <OPTION>Macedonia</OPTION>
+    <OPTION>Madagascar</OPTION>
+    <OPTION>Malawi</OPTION>
+    <OPTION>Malaysia</OPTION>
+    <OPTION>Maldives</OPTION>
+    <OPTION>Mali</OPTION>
+    <OPTION>Malta</OPTION>
+    <OPTION>Marshall Islands</OPTION>
+    <OPTION>Mauritania</OPTION>
+    <OPTION>Mauritius</OPTION>
+    <OPTION>Mexico</OPTION>
+    <OPTION>Micronesia</OPTION>
+    <OPTION>Moldova</OPTION>
+    <OPTION>Monaco</OPTION>
+    <OPTION>Mongolia</OPTION>
+    <OPTION>Montenegro</OPTION>
+    <OPTION>Morocco</OPTION>
+    <OPTION>Mozambique</OPTION>
+    <OPTION>Namibia</OPTION>
+    <OPTION>Nauru</OPTION>
+    <OPTION>Nepal</OPTION>
+    <OPTION>Netherlands</OPTION>
+    <OPTION>New Zealand</OPTION>
+    <OPTION>Nicaragua</OPTION>
+    <OPTION>Niger</OPTION>
+    <OPTION>Nigeria</OPTION>
+    <OPTION>North Korea</OPTION>
+    <OPTION>Norway</OPTION>
+    <OPTION>Oman</OPTION>
+    <OPTION>Pakistan</OPTION>
+    <OPTION>Palau</OPTION>
+    <OPTION>Palestinian Territories</OPTION>
+    <OPTION>Panama</OPTION>
+    <OPTION>Papua New Guinea</OPTION>
+    <OPTION>Paraguay</OPTION>
+    <OPTION>Peru</OPTION>
+    <OPTION>Philippines</OPTION>
+    <OPTION>Poland</OPTION>
+    <OPTION>Portugal</OPTION>
+    <OPTION>Qatar</OPTION>
+    <OPTION>Romania</OPTION>
+    <OPTION>Russia</OPTION>
+    <OPTION>Rwanda</OPTION>
+    <OPTION>Saint Kitts and Nevis</OPTION>
+    <OPTION>Saint Lucia</OPTION>
+    <OPTION>Saint Vincent and the Grenadines</OPTION>
+    <OPTION>Samoa</OPTION>
+    <OPTION>San Marino</OPTION>
+    <OPTION>Sao Tome and Principe</OPTION>
+    <OPTION>Saudi Arabia</OPTION>
+    <OPTION>Senegal</OPTION>
+    <OPTION>Serbia</OPTION>
+    <OPTION>Seychelles</OPTION>
+    <OPTION>Sierra Leone</OPTION>
+    <OPTION>Singapore</OPTION>
+    <OPTION>Sint Maarten</OPTION>
+    <OPTION>Slovakia</OPTION>
+    <OPTION>Slovenia</OPTION>
+    <OPTION>Solomon Islands</OPTION>
+    <OPTION>Somalia</OPTION>
+    <OPTION>South Africa</OPTION>
+    <OPTION>South Korea</OPTION>
+    <OPTION>South Sudan</OPTION>
+    <OPTION>Spain</OPTION>
+    <OPTION>Sri Lanka</OPTION>
+    <OPTION>Sudan</OPTION>
+    <OPTION>Suriname</OPTION>
+    <OPTION>Swaziland</OPTION>
+    <OPTION>Sweden</OPTION>
+    <OPTION>Switzerland</OPTION>
+    <OPTION>Syria</OPTION>
+    <OPTION>Taiwan</OPTION>
+    <OPTION>Tajikistan</OPTION>
+    <OPTION>Tanzania</OPTION>
+    <OPTION>Thailand</OPTION>
+    <OPTION>Timor-Leste</OPTION>
+    <OPTION>Togo</OPTION>
+    <OPTION>Tonga</OPTION>
+    <OPTION>Trinidad and Tobago</OPTION>
+    <OPTION>Tunisia</OPTION>
+    <OPTION>Turkey</OPTION>
+    <OPTION>Turkmenistan</OPTION>
+    <OPTION>Tuvalu</OPTION>
+    <OPTION>Uganda</OPTION>
+    <OPTION>Ukraine</OPTION>
+    <OPTION>United Arab Emirates</OPTION>
+    <OPTION>United Kingdom</OPTION>
+    <OPTION>Uruguay</OPTION>
+    <OPTION>Uzbekistan</OPTION>
+    <OPTION>Vanuatu</OPTION>
+    <OPTION>Venezuela</OPTION>
+    <OPTION>Vietnam</OPTION>
+    <OPTION>Yemen</OPTION>
+    <OPTION>Zambia</OPTION>
+    <OPTION>Zimbabwe</OPTION>
+    </SELECT></TD>
+</TR>
+<TR>
+<TD><B>Gender </B></TD>
+<TD> <INPUT TYPE="RADIO" NAME="GENDER" VALUE="M">Male</TD>
+<TD> <INPUT TYPE="RADIO" NAME="GENDER" VALUE="F">Female</TD>
+</TR>
+<TR>
+<TD><B>Blood Group </B></TD>    
+<TD><SELECT NAME="BLOOD GROUP" SIZE="1">
+    <OPTION>A+</OPTION>
+    <OPTION>A-</OPTION>
+    <OPTION>B+</OPTION>
+    <OPTION>B-</OPTION>
+    <OPTION>O+</OPTION>
+    <OPTION>O-</OPTION>
+    <OPTION>AB+</OPTION>
+    <OPTION>AB-</OPTION>
+    </SELECT>
+</TD>
+</TR>
+<TR>
+<TD><B>Address </B></TD>
+<TD><TEXTAREA ROWS="2" COLS="20" NAME="ADDRESS" PLACEHOLDER="Enter address details!" REQUIRED></TEXTAREA></TD>
+<TD><B> Phone Number </B></TD>
+<TD><INPUT TYPE="TEXT" NAME="PHONENUMBER" SIZE="14" REQUIRED></TD>
+<TD><span id="phno_msg"></span></TD>
+</TR>
+<TR>
+<TD><B>Email Id </B></TD>
+<TD><INPUT TYPE="TEXT" NAME="USERID" SIZE="20" REQUIRED PLACEHOLDER="Enter Id!"></TD>
+</TR>
+<TR>
+<TD><B>Password </B></TD>
+<TD><INPUT TYPE="password" SIZE="20" ID="password" REQUIRED></TD>
+<TD><input type="checkbox" onclick="showPassword()">Show Password</TD>
+</TR>
+<TR>
+<TD><B>Confirm Password </B></TD>
+<TD><INPUT TYPE="TEXT" NAME="CONFIRMPASSWORD" SIZE="20" REQUIRED></TD>
+</TR>
+<TR>
+<TD ID="PHOTOGRAPH"><B>Photograph </B></TD>
+<TD><INPUT TYPE="FILE" NAME="PHOTO" ID="PHOTO"></TD>
+</TR>
+<TR>
+<TD  ID="SIGNATURE"><B>Signature </B></TD>
+<TD><INPUT TYPE="FILE" NAME="SIGN" ID="SIGN"></TD>
+</TR>
+</TABLE>
+<BR>
+<TABLE>
+<TR>
+<TD><INPUT TYPE="SUBMIT" VALUE="Submit"></TD>
+<TD><INPUT TYPE="RESET" VALUE="Clear"></TD>
+</TR>
+</TABLE>
+
+</DIV>
 </form>
+<br>
 <div class="footer">
+<B>Note: </B><BR>
+The "RED" fields are neccesary to be filled before submitting the form.
 </div>
 </body>
 </html>
