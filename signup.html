@@ -26,16 +26,31 @@
 			return true;
 		} 
     $(document).ready(function(){
-    var a,b;
+    var a,b,c,d,e,f,g,h,i,j;
     $("#P").click(function(){
         a=$("#PHOTO").detach();
         b=$("#SIGN").detach();
+        c=$("#PHOTOGRAPH").detach();
+        d=$("#SIGNATURE").detach();
+        e=$("#SPEC").detach();
+        f=$("#WRKHRS").detach();
+        g=$("#ORG").detach();
+        h=$("#SPECIALIZATION").detach();
+        i=$("#WORKINGHOURS").detach();
+        j=$("#ORGANIZATION").detach();
         
     });
     $("#D").click(function(){
-       
+        $("#13").prepend(c);
+        $("#14").prepend(d);
         $("#PHOTOGRAPH").after(a);
         $("#SIGNATURE").after(b);
+        $("#10").prepend(h);
+        $("#11").prepend(i);
+        $("#12").prepend(j);
+        $("#SPECIALIZATION").after(e);
+        $("#WORKINGHOURS").after(f);
+        $("#ORGANIZATION").after(g);
     });
 });
     </script>
@@ -60,12 +75,12 @@
 <DIV ALIGN="CENTER">
 <H1>Sign Up</H1>
 <TABLE >
-<TR>
+<TR ID="1">
 <TD><B>Category</B></TD>
 <TD> <INPUT TYPE="RADIO" NAME="PROF" VALUE="D" ID="D">Doctor</TD>
 <TD> <INPUT TYPE="RADIO" NAME="PROF" VALUE="P" ID="P">Patient</TD>
 </TR>
-<TR>
+<TR ID="2">
 <TD><B>First Name </B></TD>
 <TD><INPUT TYPE="TEXT" NAME="FIRSTNAME" PLACEHOLDER="Enter your first name !" SIZE="25" MAXLENGTH="30" REQUIRED AUTOFOCUS></TD>
 <TD><B> Middle Name </B></TD>
@@ -73,7 +88,7 @@
 <TD><B> Last Name </B></TD>
 <TD><INPUT TYPE="TEXT" NAME="LASTNAME" PLACEHOLDER="Enter your last name !" SIZE="25" MAXLENGTH="30" REQUIRED></TD>
 </TR>
-<TR>
+<TR ID="3">
 <TD><B>DOB </B></TD>
 <TD><INPUT TYPE="TEXT" NAME="DOB" PLACEHOLDER="dd/mm/yyyy" SIZE="10"></TD>
 <TD><B> Country </B></TD>
@@ -284,12 +299,12 @@
     <OPTION>Zimbabwe</OPTION>
     </SELECT></TD>
 </TR>
-<TR>
+<TR ID="4">
 <TD><B>Gender </B></TD>
 <TD> <INPUT TYPE="RADIO" NAME="GENDER" VALUE="M">Male</TD>
 <TD> <INPUT TYPE="RADIO" NAME="GENDER" VALUE="F">Female</TD>
 </TR>
-<TR>
+<TR ID="5">
 <TD><B>Blood Group </B></TD>    
 <TD><SELECT NAME="BLOOD GROUP" SIZE="1">
     <OPTION>A+</OPTION>
@@ -303,31 +318,43 @@
     </SELECT>
 </TD>
 </TR>
-<TR>
+<TR ID="6">
 <TD><B>Address </B></TD>
 <TD><TEXTAREA ROWS="2" COLS="20" NAME="ADDRESS" PLACEHOLDER="Enter address details!" REQUIRED></TEXTAREA></TD>
 <TD><B> Phone Number </B></TD>
 <TD><INPUT TYPE="TEXT" NAME="PHONENUMBER" SIZE="14" REQUIRED></TD>
 <TD><span id="phno_msg"></span></TD>
 </TR>
-<TR>
+<TR ID="7">
 <TD><B>Email Id </B></TD>
 <TD><INPUT TYPE="TEXT" NAME="USERID" SIZE="20" REQUIRED PLACEHOLDER="Enter Id!"></TD>
 </TR>
-<TR>
+<TR ID="8">
 <TD><B>Password </B></TD>
 <TD><INPUT TYPE="password" SIZE="20" ID="password" REQUIRED></TD>
 <TD><input type="checkbox" onclick="showPassword()">Show Password</TD>
 </TR>
-<TR>
+<TR ID="9">
 <TD><B>Confirm Password </B></TD>
 <TD><INPUT TYPE="TEXT" NAME="CONFIRMPASSWORD" SIZE="20" REQUIRED></TD>
 </TR>
-<TR>
+<TR ID="10">
+<TD ID="SPECIALIZATION"><B>Specialization</B></TD>
+<TD><INPUT TYPE="TEXT" NAME="SPEC" SIZE="20" REQUIRED PLACEHOLDER="Enter Specialization!" ID="SPEC"></TD>
+</TR>
+<TR ID="11">
+<TD ID="WORKINGHOURS"><B>Working Hours</B></TD>
+<TD><INPUT TYPE="TEXT" NAME="WRKHRS" SIZE="20" REQUIRED PLACEHOLDER="Enter Working Hours!" ID="WRKHRS"></TD>
+</TR>
+<TR ID="12">
+<TD ID="ORGANIZATION"><B>Organization</B></TD>
+<TD><INPUT TYPE="TEXT" NAME="ORG" SIZE="30" REQUIRED PLACEHOLDER="Enter name of organization you work in!" ID="ORG"></TD>
+</TR>
+<TR ID="13">
 <TD ID="PHOTOGRAPH"><B>Photograph </B></TD>
 <TD><INPUT TYPE="FILE" NAME="PHOTO" ID="PHOTO"></TD>
 </TR>
-<TR>
+<TR ID="14">
 <TD  ID="SIGNATURE"><B>Signature </B></TD>
 <TD><INPUT TYPE="FILE" NAME="SIGN" ID="SIGN"></TD>
 </TR>
