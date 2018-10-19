@@ -26,10 +26,11 @@
 			return true;
 		} 
     $(document).ready(function(){
-    var b,d,e,f,g,h,i,j;
+    var a,b,c,d,e,f,g,h,i,j,k,l;
     $("#P").click(function(){
-       
+        a=$("#WRKHRSF").detach();
         b=$("#SIGN").detach();
+        c=$("#FROM").detach();
         d=$("#SIGNATURE").detach();
         e=$("#SPEC").detach();
         f=$("#WRKHRS").detach();
@@ -37,17 +38,23 @@
         h=$("#SPECIALIZATION").detach();
         i=$("#WORKINGHOURS").detach();
         j=$("#ORGANIZATION").detach();
+        k=$("#WRKHRST").detach();
+        l=$("#TO").detach();
         
     });
     $("#D").click(function(){
-        $("#14").prepend(d);
+        $("#15").prepend(d);
         $("#SIGNATURE").after(b);
         $("#10").prepend(h);
         $("#11").prepend(i);
-        $("#12").prepend(j);
+        $("#13").prepend(j);
         $("#SPECIALIZATION").after(e);
         $("#WORKINGHOURS").after(f);
         $("#ORGANIZATION").after(g);
+        $("#12").prepend(c);
+        $("#FROM").after(a);
+        $("#WRKHRSF").after(l);
+        $("#TO").after(k);
     });
 });
     </script>
@@ -630,30 +637,36 @@
 </TR>
 <TR ID="8">
 <TD><B>Password </B></TD>
-<TD><INPUT TYPE="password" SIZE="20" ID="password" REQUIRED></TD>
+<TD><INPUT TYPE="password" SIZE="20" ID="password" REQUIRED/></TD>
 <TD><input type="checkbox" onclick="showPassword()">Show Password</TD>
 </TR>
 <TR ID="9">
 <TD><B>Confirm Password </B></TD>
-<TD><INPUT TYPE="TEXT" NAME="CONFIRMPASSWORD" SIZE="20" REQUIRED></TD>
+<TD><INPUT TYPE="TEXT" NAME="CONFIRMPASSWORD" SIZE="20" REQUIRED/></TD>
 </TR>
 <TR ID="10">
 <TD ID="SPECIALIZATION"><B>Specialization</B></TD>
-<TD><INPUT TYPE="TEXT" NAME="SPEC" SIZE="20" REQUIRED PLACEHOLDER="Enter Specialization!" ID="SPEC"></TD>
+<TD><INPUT TYPE="TEXT" NAME="SPEC" SIZE="20" REQUIRED PLACEHOLDER="Enter Specialization!" ID="SPEC"/></TD>
 </TR>
 <TR ID="11">
-<TD ID="WORKINGHOURS"><B>Working Hours</B></TD>
-<TD><INPUT TYPE="TEXT" NAME="WRKHRS" SIZE="20" REQUIRED PLACEHOLDER="Enter Working Hours!" ID="WRKHRS"></TD>
+<TD ID="WORKINGHOURS"><B>Working Hours :</B></TD>
 </TR>
 <TR ID="12">
+<TD ID="FROM"><B>From</B></TD>
+<TD><INPUT TYPE="TEXT" NAME="WRKHRS_FROM" SIZE="20"  ID="WRKHRSF"/></TD>
+<TD ID="TO"><B>To</B></TD>
+<TD><INPUT TYPE="TEXT" NAME="WRKHRS_TO" SIZE="20"  ID="WRKHRST"/></TD>
+</TR>
+</TR>
+<TR ID="13">
 <TD ID="ORGANIZATION"><B>Organization</B></TD>
 <TD><INPUT TYPE="TEXT" NAME="ORG" SIZE="30" REQUIRED PLACEHOLDER="Enter name of organization you work in!" ID="ORG"></TD>
 </TR>
-<TR ID="13">
+<TR ID="14">
 <TD ID="PHOTOGRAPH"><B>Photograph </B></TD>
 <TD><INPUT TYPE="FILE" NAME="PHOTO" ID="PHOTO"></TD>
 </TR>
-<TR ID="14">
+<TR ID="15">
 <TD  ID="SIGNATURE"><B>Signature </B></TD>
 <TD><INPUT TYPE="FILE" NAME="SIGN" ID="SIGN"></TD>
 </TR>
