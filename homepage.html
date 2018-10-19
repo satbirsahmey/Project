@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DocsNearYou</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+ <div class="header">
+  <a href="homepage.html" class="logo" ><img src="images/logo.jpg" height="50px" width="70px"></a>
+  <a href="homepage.html" class="logo">DocsNearYou</a>
+  <div class="search-container">
+   <form action="">
+  <input type="text" placeholder="Search.." name="search">
+   <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
+  </div>
+  <div class="header-right">
+    <a class="active" href="homepage.html"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="login.html"><i class="fa fa-fw fa-user"></i>Log In</a>
+    <a href="signup.html"><i class="fa fa-fw fa-user"></i>Sign Up</a>
+  </div>
+</div> 
+<br>
+<div class="navbar">
+  <div class="dropdown">
+    <button class="dropbtn">Appointment</button>
+  <div class="dropdown-content">
+      <a href="appointment_book.html">Book</a>
+      <span id="v"><a href="" >View</a></span>
+   </div>
+    </div>
+ <div class="dropdown">
+   <button class="dropbtn" onclick="">Prescription</button>
+   <div class="dropdown-content">
+       <span id="p"><a href="" >Prescribe</a></span>
+      <a href="">View</a>
+    </div>
+  </div>
+  <div class="dropdown">
+   <button class="dropbtn" onclick="">Medical History</button>
+   <div class="dropdown-content">
+      <a href="">Update</a>
+      <a href="">View</a>
+    </div>
+  </div> 
+</div>
+<div class="row">
+<div class="side">
+<div class="card">
+  <img src="" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>Name :</b></h4> 
+    <!-- Some jsp codes to dynamically display name and stuff. -->
+  </div>
+</div>
+</div>
+<div class="main">
+   <h1>Name </h1>
+    <table>
+    <tr id="1">
+    <td><b>Age :</b></td>
+        <td><p>Data should be fetched from database and should be displayed here.</p></td>
+    </tr>
+    <tr id="2">
+    <td><b>Sex :</b></td>
+        <td><p>Data should be fetched from database and should be displayed here.</p></td>
+    </tr>
+    <tr id="3">
+    <td><b>Blood Group :</b></td>
+        <td><p>Data should be fetched from database and should be displayed here.</p></td>
+    </tr>
+    <tr id="4">
+    <td><b>Address :</b></td>
+        <td><p>Data should be fetched from database and should be displayed here.</p></td>
+    </tr>
+    <tr id="5">
+    <td><b>Email Id :</b></td>
+        <td><p>Data should be fetched from database and should be displayed here.</p></td>
+    </tr>
+    <tr id="6">
+    <td><b>Specialization :</b></td>
+        <td><p>Data should be fetched from database and should be displayed here.</p></td>
+    </tr>
+    <tr id="7">
+    <td><b>Working Hours :</b></td>
+        <td><p>Data should be fetched from database and should be displayed here.</p></td>
+    </tr>
+    <tr id="8">
+    <td><b>Organization :</b></td>
+        <td><p>Data should be fetched from database and should be displayed here.</p></td>
+    </tr>
+    <tr id="9">
+    <td><b>Experience :</b></td>
+        <td><p>Data should be fetched from database and should be displayed here.</p></td>
+    </tr>
+    </table>
+    
+    </div>
+</div>
+<!-- Some codes should be written such that if a doctor logs in then all the options in navbar and fields are displayed and if a 
+patient logs in then elements with id's 6,7,8,9,v,p should be removed. use jQuery to do so. -->    
+<br>
+<div class="footer">
+<p>Contact : 123456789</p>
+</div>
+</body>
+</html>
