@@ -1,0 +1,115 @@
+package com.DocsNearYou;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class signup
+ */
+public class signup extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	Connection con=null;
+	RequestDispatcher rd=null;
+	ServletContext ctx=null;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public signup() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see Servlet#init(ServletConfig)
+	 */
+	public void init(ServletConfig config) throws ServletException {
+		// TODO Auto-generated method stub
+		try{Class.forName("oracle.jdbc.driver.OracleDriver");}
+		catch(ClassNotFoundException e){
+			System.out.println(e);
+		}
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		String category=request.getParameter("PROF");
+		String fn=request.getParameter("FIRSTNAME");
+		String mn=request.getParameter("MIDDLENAME");
+		String ln=request.getParameter("LASTNAME");
+		String dob=request.getParameter("DOB");
+		String city=request.getParameter("CITY");
+		String gender=request.getParameter("GENDER");
+		String bg=request.getParameter("BLOOD GROUP");
+		String addr=request.getParameter("ADDRESS");
+		String phno=request.getParameter("PHONENUMBER");
+		String emailid=request.getParameter("USERID");
+		String pass=request.getParameter("PASSWORD");
+		FileInputStream photo= new FileInputStream(request.getParameter("PHOTO"));
+		ctx=request.getServletContext();
+		try{
+			con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orclq","scott","tiger");
+			PreparedStatement ps=con.prepareStatement("INSERT INTO users VALUES(users_id.nextval,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+		    ps.setString(1, fn);
+		    ps.setString(2, mn);
+		    ps.setString(3, ln);
+		    ps.setString(4, dob);
+		    ps.setString(5, gender);
+		    ps.setString(6, bg);
+		    ps.setString(7, addr);
+		    ps.setString(8, phno);
+		    ps.setString(9, emailid);
+		    ps.setString(10, pass);
+		    ps.setBinaryStream(11,photo,photo.available());  
+		    ps.setString(12, category);
+		    ps.setString(13, city);
+		    ps.executeUpdate();
+		    if(category.equalsIgnoreCase("D")) {
+		        String spec=request.getParameter("SPEC");
+			    String from=request.getParameter("WRKHRS_FROM");
+			    String to=request.getParameter("WRKHRS_TO");
+			    String org=request.getParameter("ORG");
+			    FileInputStream sign= new FileInputStream(request.getParameter("SIGN"));
+			    PreparedStatement ps_id=con.prepareStatement("SELECT u_id from users where email_id = ?");
+			    ps_id.setString(1, emailid);
+			    ResultSet rs=ps_id.executeQuery();
+			    rs.next();
+		    	PreparedStatement ps_d=con.prepareStatement("INSERT INTO user_d VALUES(u_d_id.nextval,?,?,?,?,?,?)");
+		    	ps_d.setString(1, from);
+		    	ps_d.setString(2, to);
+		    	ps_d.setString(3, org);
+		    	ps_d.setString(4, spec);
+		    	ps_d.setBinaryStream(5,sign,sign.available());
+		    	ps_d.setString(6, rs.getString("u_id"));
+		    	ps_d.executeUpdate();
+		    }
+		    rd=ctx.getRequestDispatcher("/login.html");
+			rd.forward(request, response);
+		}catch(SQLException e){
+	          System.out.println(e.getMessage());
+    }finally{
+	          try{
+	          	con.close();
+	             }catch(SQLException e1){
+		                  System.out.println(e1);
+	           }
+}
+	}
+
+}
